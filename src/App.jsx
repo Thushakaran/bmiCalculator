@@ -28,16 +28,18 @@ function App() {
     } else {
       setBmi(null);
       setBmiStatus("");
-      setErrorMessage("Please enter valid numeric values for height and weight.")
+      setErrorMessage(
+        "Please enter valid numeric values for height and weight."
+      );
     }
   };
 
-const clearAll = () => {
-  setHeight("");
-  setWeight("");
-  setBmi(null);
-  setBmiStatus("");
-};
+  const clearAll = () => {
+    setHeight("");
+    setWeight("");
+    setBmi(null);
+    setBmiStatus("");
+  };
 
   return (
     <>
@@ -45,7 +47,7 @@ const clearAll = () => {
         <div className="box"></div>
         <div className="data">
           <h1>BMI Calculator</h1>
-          
+
           {errorMessage && <p className="error">{errorMessage}</p>}
           <div className="input-container">
             <label htmlFor="height">Height (cm): </label>
@@ -67,12 +69,12 @@ const clearAll = () => {
           </div>
           <button onClick={calculateBmi}>Calculate BMI</button>
           <button onClick={clearAll}>Reset</button>
-           {bmi != null && (
+          {bmi != null && (
             <div className="result">
-            <p>Your BMI is: {bmi}</p>
-            <p>Status: {bmiStatus}</p>
-          </div>
-           )}
+              <p>Your BMI is: {bmi}</p>
+              <p>Status: {bmiStatus}</p>
+            </div>
+          )}
         </div>
       </div>
     </>
